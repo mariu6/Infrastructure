@@ -1,6 +1,13 @@
 // Insert the EVENT model
 const User = require("../users/User");
 const {validationResult} = require('express-validator');
-const Event = require("./Event");
+const Model = require("./Model");
 
-// TO DO
+module.exports = {
+    get: {
+
+    },
+    post: {
+        
+    }
+}
