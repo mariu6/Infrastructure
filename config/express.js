@@ -5,9 +5,9 @@ const handlebars = require("express-handlebars");
 const { cookie } = require("../config/config");
 const jwt = require("../utils/jwt");
 
-module.exports = (app) => {
-    //view engine setup
-    app.engine("hbs", handlebars({
+module.exports = (app) => {                              //  setup of midlewares   
+    //view engine setup             
+    app.engine("hbs", handlebars({                          
         layoutsDir: "views",
         defaultLayout: "base-layout",
         partialsDir: "views/partials",
