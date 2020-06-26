@@ -8,9 +8,9 @@ const jwt = require("../utils/jwt");
 module.exports = (app) => {                              //  setup of midlewares   
     //view engine setup             
     app.engine("hbs", handlebars({                          
-        layoutsDir: "views",
-        defaultLayout: "base-layout",
-        partialsDir: "views/partials",
+        layoutsDir: "views",                             // default folder for views   
+        defaultLayout: "main",                           //  The wrapper with {{> header/navigation}} {{{ body }}} {{> footer}}           
+        partialsDir: "views/partials",                   // default folder for partials      
         extname: "hbs"
     }));
 
