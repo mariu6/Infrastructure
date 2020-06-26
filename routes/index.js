@@ -1,5 +1,5 @@
 const home = require("./home");
 const users = require("./users");
-const EVENTS = require("./EVENTS");
+const models = require("./models");
 
-module.exports = { home, users, EVENTS, }  // indexing all routes, exporting them in one object
+module.exports = { home, users, models, }  // indexing all routes, exporting them in one object

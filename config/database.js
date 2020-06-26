@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const dbString = require("./config").dbUrl + "NAME_OF_THE_DB_EVENTS";
+const dbString = require("./config").dbUrl + "NAME";     // TO DO the name of the DB
 
 module.exports = () => {
-    return mongoose.connect(dbString, {     // connect returns promise
+    return mongoose.connect(dbString, {     // .connect returns promise, exported as a function
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true

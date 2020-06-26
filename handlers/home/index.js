@@ -1,11 +1,12 @@
-const Events = require("../EVENTS");
+const Models = require("../model");
 
 // TO DO - export the functionality
 
 module.exports = {
     get: {
         home(req, res, next) {
-            res.status(208).render(home.hbs);
+            res.status(200).render('home.hbs');
+            // next();
         },
     },
     post: {
