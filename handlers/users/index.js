@@ -31,6 +31,28 @@ module.exports = {
 
                 res.status(201).cookie(cookie, token, { maxAge: 3600000 }).redirect("/home/");
             })
+        },
+        register(req, res, next) {
+            const { username, password, repassword } = req.body;
+            if (password !== repassword) {
+                res.render("users/register.hbs", {
+                    message: "Passwords do not match!",
+                    oldInput: { username, password, repassword }
+                });
+                return;
+            }
+            User.findOne({ username })
+                .then((currentUser) => {
+                    if (currentUser) { throw new Error("The given username is already used!") }
+                    return User.create({ username, password })
+                }).then((createdUser) => {
+                    res.redirect("/user/login");
+                }).catch((err) => {
+                    res.render("users/register.hbs", {
+                        message: err.message,
+                        oldInput: { username, password, repassword }
+                    })
+                })
         }
     }
 }
