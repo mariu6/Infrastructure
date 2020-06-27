@@ -1,19 +1,14 @@
 // used for validation
 const { body } = require("express-validator");
 
-module.exports = [
-    // body("directions")
-    // .custom((value) => {
-    //     if(!value.includes(" - ")) {
-    //         throw new Error("The directions input field should includes ' - ' between the... ")
-    //     }
-    //     return true;
-    // }),
-    // body("dateTime")
-    // .custom((value) => {
-    //     if(!value.includes(" - ")) {
-    //         throw new Error("The directions input field should includes ' - ' between the... ")
-    //     }
-    //     return true;
-    // })
-]
+module.exports = {
+    user: [
+        body("username").isLength({ min: 5 }),
+        body("password").isLength({ min: 5 }),
+        body("repassword").isLength({ min: 5 })
+    ],
+    event: [
+        body("property").isLength({ min: 5 }),
+        body("otherProperty").isLength({ min: 5 })
+    ]
+}
